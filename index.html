@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVARD</title>
+    <link rel="Icon" href="ICON.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="logo-container">
+            <a href="index.html">
+            <img src="ICON.png" alt="Logo" class="logo">
+            </a>
+        </div>
+        <a  href="index.html">NOVARD</a>
+    </div>
+    <div class="nav-center">YOUR INTELLIGENT CHAT SOLUTION</div>
+    <div class="nav-right"><a href="login.html">Login/Register</a></div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-text">
+            <h1>Welcome to <span style="color:#0077cc;">Novard AI</span></h1>
+            <p>Your personal career consultant powered by intelligent conversations.  
+             Novard AI helps you explore career options, plan your path, and get expert guidance all in real time.</p>
+         <!-- Path Selection Block -->
+            <div class="path-outer-container">
+                <div class="path-text-box">Are you confused about which path to choose?</div>
+                <button class="path-button" onclick="window.location.href='containers.html'">Click Me!</button>
+             </div>
+         <!-- to get started -->
+            <div class="user-status-box">
+                <p>
+                    New to NOVARD, or returning to continue your journey with us?
+                    <strong>Let’s get you started the right way.</strong>  
+                    <button onclick="location.href='login.html'" class="path-button">Get Started</button>
+                 </p>
+            </div>
+    </div>
+
+    <div class="vector-image">
+        <img src="vector image.png" alt="Chatbot Illustration">
+    </div>
+</section>
+
+
+    <!-- Main Content with 4 Containers -->
+    <div class="container-wrapper">
+        <a href="engineering.html"><div class="container" >
+            
+            <h2>ENGINEERING</h2>
+            <img src="engineering.png" alt="Engineering Icon">
+            <p>Engineering is the application of science and mathematics to solve real-world problems. It covers various fields like mechanical, electrical, civil, and computer engineering. Engineers design and develop structures, machines, and software that shape modern society.</p>
+        </div></a>
+        <a href="doctor.html">
+        <div class="container" id="cont_edit">
+            <h2>DOCTOR</h2>
+            <img src="doctor.png" alt="Doctor Icon">
+            <p>Doctors diagnose, treat, and prevent diseases, playing a crucial role in healthcare. Becoming a doctor requires rigorous education and training. They work in hospitals, clinics, and research institutions to improve public health.</p>
+        </div></a>
+        <a href="law.html"><div class="container" onclick="redirectTo('law.html')">
+            <h2>LAW</h2>
+            <img src="law.png" alt="Law Icon">
+            <p>Law is the system of rules that governs society. Lawyers represent clients, interpret laws, and ensure justice. The field includes criminal, civil, corporate, and international law, offering diverse career opportunities.</p>
+        </div></a>
+        <a href="commerce.html"><div class="container" onclick="redirectTo('commerce.html')">
+            <h2>COMMERCE</h2>
+            <img src="commerce.png" alt="Commerce Icon">
+            <p>Commerce involves business, trade, marketing, and finance. It plays a key role in economic growth and globalization. Careers in commerce include accounting, investment, entrepreneurship, and management.</p>
+        </div></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

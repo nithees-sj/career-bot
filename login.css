@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #f4f9ff, #e6f0ff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; /* Increased to give proper breathing room below navbar */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Increased padding */
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent */
+    backdrop-filter: blur(10px);
+    color: #002244;
+    transition: all 0.3s ease;
+    font-size: 1.3rem; /* Increased font size */
+}
+  
+.nav-left a {
+    text-decoration: none !important; /* Remove underline */
+    color: inherit; /* Ensure the text color is inherited */
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem; /* Increased font size */
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+  
+.logo-container img {
+    height: 60px; /* Increased logo size */
+    margin-right: 10px;
+    cursor: pointer;
+}
+  
+.nav-center {
+    font-size: 1.7rem; /* Increased font size */
+    font-weight: 700;
+    color: #336699;
+}
+.nav-right a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0096c7;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.nav-right a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #00b4d8, #0066cc);
+    z-index: 0;
+    transition: left 0.5s ease;
+}
+
+.nav-right a:hover::before {
+    left: 0;
+}
+
+.nav-right a span {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-right a:hover {
+    transform: scale(1.07);
+    color: whitesmoke;
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.5);
+}
+
+.nav-right a:active {
+    transform: scale(0.96);
+}
+
+/* This will hide the box by default and show it on hover */
+.nav-right a .hidden-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: #00b4d8;
+    border-radius: 0 0 30px 30px;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.nav-right a:hover .hidden-box {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+
+.auth-container {
+    margin: 30px 0 auto 0; /* shifted a little down */
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+
+.auth-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 102, 204, 0.15);
+    border: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.auth-box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    width: 60%;
+    height: 5px;
+    background: linear-gradient(to right, #0066cc, #00b4d8);
+    border-radius: 10px;
+}
+
+h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tab {
+    flex: 1;
+    padding: 0.8rem;
+    background: linear-gradient(to right, #f0f4ff, #e6f0ff);
+    border: none;
+    border-radius: 10px;
+    color: #555;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #cce0ff, #99ccff);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.tab:hover::before {
+    left: 0;
+}
+
+.tab:hover {
+    color: #003366;
+    transform: scale(1.05);
+}
+
+.tab.active {
+    color: #0066cc;
+    border-bottom: 2px solid #0066cc;
+    background: #e6f2ff;
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border: 2px solid #ccd6dd;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 3.5%;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: linear-gradient(to right, #0066cc, #00b4d8);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #0055aa, #009ec2);
+    transform: scale(1.03);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+button[type="submit"].disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: scale(1);
+    transition: none;
+}
+
+.main-heading {
+    color: #0066cc;
+    font-size: 2.7em;
+    margin-bottom: 15px;
+    text-shadow: 0 3px 6px rgba(0, 102, 204, 0.2);
+}
+
+.sub-heading {
+    color: #004c99;
+    font-size: 1.3em;
+    border-bottom: 2px solid rgba(0, 102, 204, 0.3);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+
+.heading-container {
+    text-align: center;
+    margin: 60px auto 2rem auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0, 119, 204, 0.2);
+}

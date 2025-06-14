@@ -1,0 +1,148 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom right, #f4f9ff, #e6f0ff);
+    color: #333;
+    padding-top: 140px; /* Adjusted for unified navbar height */
+    font-size: 1.1rem;
+}
+
+/* Unified Navbar Container */
+/* Navigation Container */
+.nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Stack top and bottom navs */
+    background-color: #ffffff; /* Solid white background */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    color: #002244;
+    font-size: 1.5rem;
+  }
+  
+
+/* Top Section of Navbar */
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+}
+
+.nav-top h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #002244;
+}
+
+.nav-right a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #005599;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-right a:hover {
+    background: rgba(0, 85, 153, 0.1);
+    color: #003355;
+}
+
+/* Bottom Section of Navbar (Links) */
+.nav-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 14px 0;
+    background-color: #ffffff;
+}
+
+.nav-bottom ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bottom ul li a {
+    text-decoration: none;
+    color: #004488;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-bottom ul li a:hover {
+    background-color: #e6f0ff;
+}
+
+/* Main Section */
+main {
+    padding: 40px 60px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Section Style */
+section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 102, 204, 0.08);
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-4px);
+}
+
+h2 {
+    color: #003366;
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: #005599;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+p, ul {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 190px; /* Matches navbar height */
+  }
+  
+section h2 {
+    padding-top: 10px;
+  }
+  

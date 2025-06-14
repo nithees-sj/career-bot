@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVARD AI</title>
+    <link rel="ICON" href="ICON.png">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sections -->
+    <div class="sidebar-section">
+      <h3>📚 Educational Platforms</h3>
+      <ul>
+        <li><a href="https://www.edx.org" target="_blank">edX</a> - Free courses from top universities</li>
+        <li><a href="https://www.coursera.org" target="_blank">Coursera</a> - Certifications & degrees</li>
+        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a> - Free learning</li>
+        <li><a href="https://www.udemy.com" target="_blank">Udemy</a> - Affordable skill-building</li>
+      </ul>
+    </div>
+  
+    <div class="sidebar-section">
+      <h3>🌐 Professional Networking</h3>
+      <ul>
+        <li><a href="https://www.linkedin.com" target="_blank">LinkedIn</a> - Connect with professionals</li>
+        <li><a href="https://www.meetup.com" target="_blank">Meetup</a> - Networking events</li>
+        <li><a href="https://www.glassdoor.com" target="_blank">Glassdoor</a> - Company reviews</li>
+      </ul>
+    </div>
+  
+    <div class="sidebar-section">
+      <h3>👥 Team Collaboration</h3>
+      <ul>
+        <li><a href="https://slack.com" target="_blank">Slack</a> - Team communication</li>
+        <li><a href="https://trello.com" target="_blank">Trello</a> - Project management</li>
+        <li><a href="https://workspace.google.com" target="_blank">Google Workspace</a> - Docs, Sheets, Drive</li>
+      </ul>
+    </div>
+  
+    <div class="sidebar-section">
+      <h3>🔧 Career Tools</h3>
+      <ul>
+        <li><a href="https://www.resumegenius.com" target="_blank">ResumeGenius</a> - Resume builder</li>
+        <li><a href="https://www.canva.com" target="_blank">Canva</a> - Design resumes</li>
+        <li><a href="https://www.notion.so" target="_blank">Notion</a> - All-in-one workspace</li>
+      </ul>
+    </div>
+    <!-- <div class="sidebar-section">
+      <h3>🎥 Career Videos</h3>
+      <ul>
+          <li><a href="https://www.youtube.com/watch?v=7gVVkQglQ7k" target="_blank">Career Planning for the Future</a></li>
+          <li><a href="https://www.youtube.com/watch?v=5Z_Od8f7rXs" target="_blank">Future Job Opportunities</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Jh-mSb1hyos" target="_blank">Skills for Future Careers</a></li>
+      </ul>
+    </div>
+   -->
+          <!-- logout Button -->
+          <div class="nav-right">
+            <a href="login.html">
+              <span>Logout</span>
+              <div class="hidden-box"></div>
+           </a>
+        </div>
+  </div>
+
+    <div class="chat-container">
+        <h2 style="text-align: center;">Career Guidance Chatbot</h2>
+        <div id="messages" class="chat-box"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask your question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+body {
+    background: linear-gradient(to bottom right, #f4f9ff, #e6f0ff);
+    color: #333;
+    padding-top: 80px; /* Space for fixed navbar */
+    min-height: 100vh;
+    font-size: 1.2rem; /* Increased font size */
+}
+  
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Increased padding */
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent */
+    backdrop-filter: blur(10px);
+    color: #002244;
+    transition: all 0.3s ease;
+    font-size: 1.3rem; /* Increased font size */
+}
+  
+.nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem; /* Increased font size */
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+  
+.logo-container img {
+    height: 60px; /* Increased logo size */
+    margin-right: 10px;
+    cursor: pointer;
+}
+  
+.nav-center {
+    font-size: 1.7rem; /* Increased font size */
+    font-weight: 700;
+    color: #336699;
+}
+  
+.nav-right a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0055aa;
+    padding: 12px 25px; /* Increased padding */
+    border-radius: 20px;
+    transition: background 0.3s;
+    font-size: 1.5rem; /* Increased font size */
+}
+  
+.nav-right a:hover {
+    background: rgba(0, 85, 170, 0.1);
+}
+
+/* Hero section with vector image */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* push image a bit more right */
+    padding: 60px 80px;
+    margin-left: 10%;
+    min-height: 100vh;
+    gap: 30px; /* reduced the gap between text and image */
+}
+
+/* Text Side */
+.hero-text {
+    flex: 1;
+    max-width: 750px;
+    transform: translateY(-40px); /* Moves text up */
+}
+
+.hero-text h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: black; /* Deep blue */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: #336699; /* Soft blue-gray */
+    margin-bottom: 30px;
+}
+
+/* Outer container for placing text and button in a line */
+.path-outer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0077cc, #005fa3);
+    color: white;
+    padding: 24px 50px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 85, 170, 0.2);
+    margin: 30px auto;
+    max-width: 1400px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.path-outer-container:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 85, 170, 0.25);
+}
+
+/* Text inside the container */
+.path-text-box {
+    flex: 1;
+}
+
+/* Path Button (Choose path) */
+.path-button {
+    padding: 12px 25px;
+    background: #ffffff;
+    color: #0077cc;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 85, 170, 0.2);
+    margin-left: 40px;
+}
+
+/* Hover Effects */
+.path-button:hover{
+    background: #e6f2ff;
+    color: #005fa3;
+    transform: scale(1.1);
+}
+
+.path-button:active{
+    transform: scale(0.98);
+}
+
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Image Side */
+.vector-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-30px); /* lift image a bit */
+}
+
+
+.vector-image img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Container Wrapper */
+.container-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased minimum size */
+    gap: 35px; /* Increased gap */
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+/* Individual Career Container */
+.container {
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 119, 204, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+}
+  
+.container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 119, 204, 0.18);
+    border-color: #0077cc;
+}
+  
+.container h2 {
+    color: #0077cc;
+    font-size: 24px; /* Increased heading font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+  
+.container img {
+    width: 90px; /* Increased image size */
+    height: 90px; /* Increased image size */
+    object-fit: contain;
+    margin-bottom: 20px; /* Increased margin */
+    transition: transform 0.3s ease;
+}
+  
+.container:hover img {
+    transform: scale(1.1);
+}
+  
+.container p {
+    font-size: 16px; /* Increased paragraph font size */
+    color: #555;
+    line-height: 1.8; /* Increased line height */
+}
+  
+/* Remove link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+#cont_edit{
+    padding-bottom: 55px;
+}

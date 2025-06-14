@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eaf6ff, #d9f3ff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: scroll;  /* Ensures scrollable content */
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 80px 60px;
+}
+
+/* Left Content Area */
+.title-container {
+    margin-left: 10%;
+    max-width: 500px;
+    animation: slideLeft 1s ease-in-out;
+}
+
+.title-divider {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #00b4d8, transparent);
+    margin: 1.5rem 0;
+    animation: flow 3s infinite ease-in-out;
+}
+
+.subtitle {
+    color: #4c4c6d;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-size: 2.6rem;
+    color: #0066cc;
+    text-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+}
+
+/* Form Section */
+form {
+    background: white;
+    padding: 3rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.25);
+    max-width: 1000px; /* Increase the width */
+    width: 100%;
+    animation: slideUp 1s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+}
+
+label {
+    color: #0066cc;
+    font-weight: 600;
+    margin-top: 1.2rem;
+    display: block;
+    font-size: 1rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px 22px;
+    margin-top: 8px;
+    background: #f0f9ff;
+    border: 2px solid #cfe8ff;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #00b4d8;
+    box-shadow: 0 0 12px rgba(0, 180, 216, 0.3);
+    outline: none;
+}
+
+button {
+    background: linear-gradient(to right, #0066cc, #00b4d8);
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    letter-spacing: 1px;
+    position: relative;  /* Keep button within the form layout */
+}
+
+button:hover {
+    background: linear-gradient(to right, #0052a3, #009ccf);
+    box-shadow: 0 6px 15px rgba(0, 102, 204, 0.3);
+    transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+::placeholder {
+    color: #999;
+}
+
+/* Animated Background Gradient + Particles */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(0, 204, 255, 0.08), transparent),
+                radial-gradient(circle at bottom right, rgba(0, 153, 255, 0.1), transparent);
+    z-index: -2;
+    animation: backgroundGlow 20s ease-in-out infinite alternate;
+}
+
+/* Background Particles Container */
+.background-particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Individual Floating Particles */
+.particle {
+    position: absolute;
+    background: rgba(0, 102, 204, 0.08);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-100px) translateX(100px); }
+    50% { transform: translateY(-200px) translateX(-100px); }
+    75% { transform: translateY(-300px) translateX(50px); }
+    100% { transform: translateY(-400px) translateX(0); }
+}
+
+@keyframes backgroundGlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+
+@keyframes backgroundGlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .title-container {
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    form {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
