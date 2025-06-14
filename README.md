@@ -63,6 +63,9 @@ GEMINI_API_KEY="<your_gemini_api_key>"
 
 Replace `<your_gemini_api_key>` with your actual Gemini 1.5 Flash key.
 
+> 📌 You can generate your Gemini API Key from:  
+> **https://aistudio.google.com/app/apikey**
+
 ### 4. Run the Application
 
 #### Activate your virtual environment:
@@ -95,18 +98,3 @@ Open `index.html` and click **Go Live** using a Live Server extension in VS Code
 
 Contributions are welcome!  
 If you have suggestions for improvements or new features, feel free to **fork the repository** and submit a **pull request**.
-
----
-
-## License
-
-This project is licensed under the **MIT License** – see the [LICENSE](./LICENSE) file for details.
-
----
-
-## Acknowledgements
-
-Special thanks to:
-
-- The developers behind **Flask**, **MySQL**, and **Gemini AI**
-- All open-source libraries and frameworks that made this project possible
