@@ -66,15 +66,73 @@
   </div>
 
     <div class="chat-container">
-        <h2 style="text-align: center;">Career Guidance Chatbot</h2>
-        <div id="messages" class="chat-box"></div>
-        <div class="chat-input">
-            <input type="text" id="userInput" placeholder="Ask your question...">
-            <button onclick="sendMessage()">Send</button>
+        <h2 style="text-align: center;">Career Guidance Assistant</h2>
+
+        <!-- Mode Switch -->
+        <div class="mode-switch">
+            <button id="modeChat">Chat</button>
+            <button id="modeDoubts" class="active">Doubts</button>
+        </div>
+
+        <!-- Chat Section -->
+        <div id="chatSection" class="hidden">
+            <div id="messages" class="chat-box"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Ask your question...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <!-- Doubts Section -->
+        <div id="doubtsSection" class="hidden">
+            <!-- Create Doubt Form -->
+            <div class="doubt-form">
+                <h3>Create a new doubt</h3>
+                <input type="text" id="doubtTitle" placeholder="Short title" />
+                <textarea id="doubtQuestion" placeholder="Describe your doubt..." rows="3"></textarea>
+                <div class="or-sep"><span>or</span></div>
+                <div class="ocr-row">
+                    <input type="file" id="doubtImage" accept="image/*" />
+                    <button type="button" id="extractTextBtn" class="secondary">Extract Text</button>
+                    <span id="ocrStatus" class="ocr-status"></span>
+                </div>
+                <button id="createDoubtBtn" class="primary">Create Doubt</button>
+            </div>
+
+            <div class="doubts-layout">
+                <!-- Doubt list -->
+                <div class="doubt-list">
+                    <div class="doubt-list-header">
+                        <h3>Your Doubts</h3>
+                        <select id="doubtFilter">
+                            <option value="">All</option>
+                            <option value="open" selected>Open</option>
+                            <option value="resolved">Resolved</option>
+                        </select>
+                    </div>
+                    <div id="doubtsContainer"></div>
+                </div>
+
+                <!-- Doubt detail/thread -->
+                <div class="doubt-detail">
+                    <div id="doubtDetailHeader" class="doubt-detail-header">Select a doubt to view details</div>
+                    <div id="doubtMessages" class="doubt-messages"></div>
+                    <div class="doubt-reply">
+                        <textarea id="doubtReplyInput" placeholder="Type your reply..." rows="3"></textarea>
+                        <div class="reply-actions">
+                            <label><input type="checkbox" id="useAiReply" checked> Get AI help</label>
+                            <button id="sendDoubtReplyBtn" disabled>Send Reply</button>
+                            <input type="text" id="resolveNotes" placeholder="Resolution notes (optional)" />
+                            <button id="resolveDoubtBtn" disabled>Resolve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
     <script src="chatbot.js"></script>
 </body>
 </html>

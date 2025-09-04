@@ -153,6 +153,25 @@ body {
     padding: 20px;
 }
 
+/* Mode switch */
+.mode-switch {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.mode-switch button {
+    border: 1px solid #bde0ff;
+    background: #f5faff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.mode-switch button.active {
+    background: var(--primary);
+    color: white;
+}
+
 h2 {
     text-align: center;
     font-size: 1.8rem;
@@ -174,6 +193,16 @@ h2 {
     gap: 20px;
     border-radius: 12px;
     border: 1px solid #c4e2ff; /* optional: light blue border */
+}
+
+.hidden { display: none; }
+
+/* Doubts section layout fixes */
+#doubtsSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; /* allow inner scroll areas to work */
 }
 
 
@@ -229,6 +258,125 @@ h2 {
     border-top: 1px solid #dceeff;
     gap: 10px;
 }
+
+/* Doubt system styles */
+.doubt-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+.doubt-form input, .doubt-form textarea {
+    border: 2px solid #bde0ff;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 1rem;
+}
+.doubt-form input#doubtTitle { height: 38px; }
+.doubt-form textarea#doubtQuestion { min-height: 64px; resize: vertical; }
+.or-sep { text-align: center; color: #5a6; font-size: 0.9rem; }
+.ocr-row { display: flex; align-items: center; gap: 8px; }
+.ocr-row input[type="file"] { flex: 1; }
+.secondary { background: #eef6ff; border: 1px solid #bcdcff; color: #0b2e59; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.secondary:hover { background: #e4f0ff; }
+.ocr-status { font-size: 0.85rem; color: #0a6; }
+.doubt-form .primary {
+    align-self: flex-start;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 700;
+    box-shadow: 0 10px 18px rgba(0, 123, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.doubt-form .primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.3);
+}
+.doubt-form .primary:active {
+    transform: translateY(0);
+}
+.doubts-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 12px;
+    flex: 1; /* fill remaining height of the container */
+    min-height: 0; /* critical for nested scroll containers */
+    overflow: hidden; /* prevent children from overflowing container */
+}
+.doubt-list {
+    border: 1px solid #c4e2ff;
+    border-radius: 12px;
+    padding: 10px;
+    overflow-y: auto;
+    min-height: 0; /* enable scroll within grid item */
+}
+.doubt-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.doubt-item {
+    border: 1px solid #e1eefc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.doubt-item .title { font-weight: 600; color: #003b6f; }
+.doubt-item .meta { font-size: 12px; color: #666; }
+
+.doubt-detail {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c4e2ff;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 0; /* allow inner messages to scroll */
+}
+.doubt-detail-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e1eefc;
+    background: #f7fbff;
+    color: #003b6f;
+    font-weight: 600;
+}
+.doubt-messages {
+    flex: 1;
+    min-height: 0; /* take available space */
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.doubt-msg { padding: 10px 12px; border-radius: 12px; max-width: 80%; }
+.doubt-msg.user { align-self: flex-end; background: #e8f3ff; color: #0b2447; }
+.doubt-msg.bot { align-self: flex-start; background: #ffffff; border: 1px solid #e1eefc; color: #1b2a41; }
+.doubt-reply { border-top: 1px solid #e1eefc; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.reply-actions { display: flex; gap: 8px; align-items: center; }
+.reply-actions input[type="text"] { flex: 1; border: 1px solid #c4e2ff; border-radius: 8px; padding: 8px; }
+
+/* Improve placeholder visibility */
+.doubt-form input::placeholder, .doubt-form textarea::placeholder {
+    color: #667;
+    opacity: 1;
+}
+
+/* Markdown styling for bot messages */
+.doubt-msg.bot h1, .doubt-msg.bot h2, .doubt-msg.bot h3 {
+    margin: 6px 0 8px;
+    color: #0b2e59;
+}
+.doubt-msg.bot ul, .doubt-msg.bot ol { padding-left: 20px; margin: 6px 0; }
+.doubt-msg.bot li { margin: 4px 0; }
+.doubt-msg.bot p { margin: 6px 0; }
+.doubt-msg.bot code { background: #f6f8fa; padding: 2px 4px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.doubt-msg.bot pre { background: #0b253a; color: #f1f5f9; padding: 10px; border-radius: 8px; overflow: auto; }
+.doubt-msg.bot pre code { background: transparent; padding: 0; }
 
 .chat-input input {
     flex: 1;

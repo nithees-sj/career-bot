@@ -18,6 +18,9 @@ Welcome to **Novard**, a personalized AI-powered career consultant chatbot built
 - **Database-Driven Suggestions**  
   User data is saved in a backend database to continuously refine recommendations and offer a seamless experience.
 
+- **Doubt Clearing System**  
+  Create doubts, chat in a threaded view, get optional AI-assisted answers, and mark doubts as resolved. Accessible from the chatbot page via a Chat/Doubts mode switch.
+
 ---
 
 ## Tech Stack
@@ -59,6 +62,12 @@ Create a `.env` file in the root directory and add the following:
 
 ```env
 GEMINI_API_KEY="<your_gemini_api_key>"
+DB_HOST="localhost"
+DB_USER="root"
+DB_PASSWORD="nithees"
+DB_NAME="student_career_db"
+DB_PORT="3306"
+FLASK_DEBUG="true"
 ```
 
 Replace `<your_gemini_api_key>` with your actual Gemini 1.5 Flash key.
@@ -91,6 +100,7 @@ Open `index.html` and click **Go Live** using a Live Server extension in VS Code
 - **API Key**: Generate your Gemini 1.5 Flash API key and paste it in your `.env` file.
 - **User Registration**: Register and enter your personal details to receive personalized career suggestions.
 - **Chatbot Interaction**: Ask career-related questions and receive tailored responses from the AI.
+- **Doubts**: Switch to the Doubts tab, create a doubt (title + question), chat on the thread, optionally check "Get AI help" for AI guidance, and resolve when done. All doubts are saved and can be filtered by status.
 
 ---
 
