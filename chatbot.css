@@ -195,7 +195,7 @@ h2 {
     border: 1px solid #c4e2ff; /* optional: light blue border */
 }
 
-.hidden { display: none; }
+.hidden { display: none !important; visibility: hidden; height: 0 !important; overflow: hidden !important; }
 
 /* Doubts section layout fixes */
 #doubtsSection {
@@ -275,11 +275,12 @@ h2 {
 .doubt-form input#doubtTitle { height: 38px; }
 .doubt-form textarea#doubtQuestion { min-height: 64px; resize: vertical; }
 .or-sep { text-align: center; color: #5a6; font-size: 0.9rem; }
-.ocr-row { display: flex; align-items: center; gap: 8px; }
-.ocr-row input[type="file"] { flex: 1; }
-.secondary { background: #eef6ff; border: 1px solid #bcdcff; color: #0b2e59; border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.ocr-row { display: grid; grid-template-columns: 1fr; row-gap: 6px; align-items: center; }
+.ocr-row input[type="file"] { width: 100%; max-width: 260px; min-width: 0; }
+.ocr-row .secondary { justify-self: start; }
+.secondary { background: #eef6ff; border: 1px solid #bcdcff; color: #0b2e59; border-radius: 10px; padding: 8px 12px; cursor: pointer; min-width: 120px; text-align: center; }
 .secondary:hover { background: #e4f0ff; }
-.ocr-status { font-size: 0.85rem; color: #0a6; }
+.ocr-status { font-size: 0.85rem; color: #0a6; grid-column: 1 / -1; }
 .doubt-form .primary {
     align-self: flex-start;
     background: linear-gradient(135deg, var(--accent), var(--primary));
@@ -300,12 +301,14 @@ h2 {
 }
 .doubts-layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 360px 1fr; /* left column a bit wider for form + list */
     gap: 12px;
     flex: 1; /* fill remaining height of the container */
     min-height: 0; /* critical for nested scroll containers */
     overflow: hidden; /* prevent children from overflowing container */
 }
+.doubt-left { display: flex; flex-direction: column; min-height: 0; gap: 8px; }
+.doubt-form { flex: 0 0 auto; }
 .doubt-list {
     border: 1px solid #c4e2ff;
     border-radius: 12px;

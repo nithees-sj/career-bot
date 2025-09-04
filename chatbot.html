@@ -84,36 +84,36 @@
         </div>
 
         <!-- Doubts Section -->
-        <div id="doubtsSection" class="hidden">
-            <!-- Create Doubt Form -->
-            <div class="doubt-form">
-                <h3>Create a new doubt</h3>
-                <input type="text" id="doubtTitle" placeholder="Short title" />
-                <textarea id="doubtQuestion" placeholder="Describe your doubt..." rows="3"></textarea>
-                <div class="or-sep"><span>or</span></div>
-                <div class="ocr-row">
-                    <input type="file" id="doubtImage" accept="image/*" />
-                    <button type="button" id="extractTextBtn" class="secondary">Extract Text</button>
-                    <span id="ocrStatus" class="ocr-status"></span>
-                </div>
-                <button id="createDoubtBtn" class="primary">Create Doubt</button>
-            </div>
-
+        <div id="doubtsSection">
             <div class="doubts-layout">
-                <!-- Doubt list -->
-                <div class="doubt-list">
-                    <div class="doubt-list-header">
-                        <h3>Your Doubts</h3>
-                        <select id="doubtFilter">
-                            <option value="">All</option>
-                            <option value="open" selected>Open</option>
-                            <option value="resolved">Resolved</option>
-                        </select>
+                <!-- Left: Form + List -->
+                <div class="doubt-left">
+                    <div class="doubt-form">
+                        <h3>Create a new doubt</h3>
+                        <input type="text" id="doubtTitle" placeholder="Short title" />
+                        <textarea id="doubtQuestion" placeholder="Describe your doubt..." rows="2"></textarea>
+                        <div class="or-sep"><span>or</span></div>
+                        <div class="ocr-row">
+                            <input type="file" id="doubtImage" accept="image/*" />
+                            <button type="button" id="extractTextBtn" class="secondary">Extract Text</button>
+                            <span id="ocrStatus" class="ocr-status"></span>
+                        </div>
+                        <button id="createDoubtBtn" class="primary">Create Doubt</button>
                     </div>
-                    <div id="doubtsContainer"></div>
+                    <div class="doubt-list">
+                        <div class="doubt-list-header">
+                            <h3>Your Doubts</h3>
+                            <select id="doubtFilter">
+                                <option value="">All</option>
+                                <option value="open" selected>Open</option>
+                                <option value="resolved">Resolved</option>
+                            </select>
+                        </div>
+                        <div id="doubtsContainer"></div>
+                    </div>
                 </div>
 
-                <!-- Doubt detail/thread -->
+                <!-- Right: Thread -->
                 <div class="doubt-detail">
                     <div id="doubtDetailHeader" class="doubt-detail-header">Select a doubt to view details</div>
                     <div id="doubtMessages" class="doubt-messages"></div>

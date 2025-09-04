@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         displayMessage(`Error initializing chat - ${error.message}`, "bot");
     }
 
-    // Setup mode switch handlers (default to Doubts view initially)
+    // Setup mode switch handlers (Doubts default)
     setupModes({ defaultMode: 'doubts' });
     // Initialize doubts module (load list for user)
     initDoubts();
@@ -148,8 +148,8 @@ function setupModes(options = {}) {
     modeChat.addEventListener("click", () => {
         modeChat.classList.add("active");
         modeDoubts.classList.remove("active");
-        chatSection.classList.remove("hidden");
         doubtsSection.classList.add("hidden");
+        chatSection.classList.remove("hidden");
     });
     modeDoubts.addEventListener("click", () => {
         modeDoubts.classList.add("active");
@@ -389,11 +389,13 @@ async function extractOcrToDescription() {
             }
             statusEl.textContent = "Text extracted";
         } else {
-            statusEl.textContent = "No text found";
+            statusEl.textContent = "";
+            alert("The selected image does not contain readable text. Please try another image.");
         }
     } catch (e) {
         console.error(e);
-        statusEl.textContent = "OCR failed";
+        statusEl.textContent = "";
+        alert("OCR failed. Please try again with a clearer image.");
     }
 }
 
