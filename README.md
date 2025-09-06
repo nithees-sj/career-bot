@@ -61,13 +61,12 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory and add the following:
 
 ```env
-GEMINI_API_KEY="<your_gemini_api_key>"
-DB_HOST="localhost"
-DB_USER="root"
-DB_PASSWORD="nithees"
-DB_NAME="student_career_db"
-DB_PORT="3306"
-FLASK_DEBUG="true"
+GEMINI_API_KEY=AIzaSyDti3nTKOlIXbHhoyxWct1qt4uxo3VFPEk
+DB_HOST = "localhost"
+DB_USER = "root"
+DB_PASSWORD = "root"
+DB_NAME = "student_career_db"
+DB_PORT = 3306
 ```
 
 Replace `<your_gemini_api_key>` with your actual Gemini 1.5 Flash key.
@@ -86,7 +85,7 @@ source myenv/bin/activate
 #### Start the backend server:
 
 ```bash
-python server.py
+python3 server.py
 ```
 
 #### Launch the frontend:
