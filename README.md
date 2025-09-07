@@ -37,13 +37,6 @@ Welcome to **Novard**, a personalized AI-powered career consultant chatbot built
 ### AI Integration
 - Gemini 1.5 Flash (via API Key)
 
-
-#### Launch the frontend:
-
-Open `index.html` and click **Go Live** using a Live Server extension in VS Code.
-
----
-
 ## Usage
 
 - **API Key**: Generate your Gemini 1.5 Flash API key and paste it in your `.env` file.
