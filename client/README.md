@@ -14,5 +14,5 @@ It provides a clean user interface built with HTML, CSS, and JavaScript, with as
 ## 📦 Getting Started
 
 Clone the repo:  
-```terminal
+```bash
 git clone https://github.com/nithees-sj/career_bot.git
